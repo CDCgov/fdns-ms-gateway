@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Welcome to Foundation Services</title>
+<style type="text/css">
+html { font-size: 12px; }
+@media screen and (min-width: 32rem) and (max-width: 48rem) { html { font-size: 15px; } }
+@media screen and (min-width: 48rem) { html { font-size: 16px; } }
+body { line-height: 1.85; }
+p { font-size: 1rem; margin-bottom: 1.3rem; color: #555; }
+h1, h2, h3, h4 { margin: 1.414rem 0 .5rem; font-weight: inherit; line-height: 1.42; }
+h1 { font-size: 2.827rem }
+h2 { font-size: 1.999rem; }
+h3 { font-size: 1.414rem; }
+h4 { font-size: 1.121rem; }
+h5 { font-size: .88rem; }
+small { font-size: .707em; }
+img, canvas, iframe, video, svg, select, textarea { max-width: 100%; }
+body { color: #444; font-family: 'Open Sans', Helvetica, sans-serif; font-weight: 300; margin: 6rem auto 1rem; max-width: 48rem; }
+a, a:visited { color: #1c57c4; }
+a:hover, a:focus, a:active { color: #003686; }
+pre { background-color: #fafafa; padding: 1rem; text-align: left; }
+blockquote { margin: 0; border-left: 5px solid #7a7a7a; font-style: italic; padding: 1.33em; text-align: left; }
+.footer-img { width: 147px; }
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
+</style>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Welcome to Foundation Services</h1>
+      <p>Foundation Services (FDNS) are a suite of microservices offering easy-to-use endpoints, specifically designed for public health software use cases.</p>
+    </header>
+
+    <section>
+      <!-- HL7 -->
+      <h2>FDNS HL7 Utilities Microservice</h2>
+      <p>This is the microservice with the HL7 utilities service to parse, validate and generate sample HL7 data.</p>
+      <pre><code><a href="http://origin/hl7/" class="origin">http://origin/hl7/</a></code></pre>
+
+      <!-- CDA -->
+      <h2>FDNS CDA Utilities Microservice</h2>
+      <p>This is the microservice with the CDA utilities service to parse, validate and generate sample CDA data.</p>
+      <pre><code><a href="http://origin/cda/" class="origin">http://origin/cda/</a></code></pre>
+
+      <!-- Storage -->
+      <h2>FDNS Storage Microservice</h2>
+      <p>This microservice contains the Storage layer for the Data Lake. This is the immutable layer.</p>
+      <pre><code><a href="http://origin/storage/" class="origin">http://origin/storage/</a></code></pre>
+
+      <!-- Object -->
+      <h2>FDNS Object Microservice</h2>
+      <p>This microservice contains the Object layer for the Data Lake. This is the mutable layer of the data lake.</p>
+      <pre><code><a href="http://origin/object/" class="origin">http://origin/object/</a></code></pre>
+
+      <!-- Indexing -->
+      <h2>FDNS Indexing Microservice</h2>
+      <p>This microservice contains the Indexing layer for the Data Lake. This is the navigation layer.</p>
+      <pre><code><a href="http://origin/indexing/" class="origin">http://origin/indexing/</a></code></pre>
+      
+      <!-- Combiner -->
+      <h2>FDNS Combiner Microservice</h2>
+      <p>This is the microservice with the Combiner service to combine JSON files into a single CSV or XLSX file.</p>
+      <pre><code><a href="http://origin/combiner/" class="origin">http://origin/combiner/</a></code></pre>
+      
+      <!-- Rules -->
+      <h2>FDNS Rules Microservice</h2>
+      <p>This is the microservice with the Business Rules Engine for ingesting and validating JSON files.</p>
+      <pre><code><a href="http://origin/rules/" class="origin">http://origin/rules/</a></code></pre>
+    </section>
+  </div>
+<script>
+  var elts = document.getElementsByClassName("origin");
+  for (var i = 0; i < elts.length; i++) {
+    var el = elts[i];
+    el.innerHTML = el.innerHTML.replace('http://origin', window.location.origin);
+    el.setAttribute('href', el.href.replace('http://origin', window.location.origin));
+  }
+</script>
+</body>
+</html>
