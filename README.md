@@ -1,11 +1,54 @@
-# fdns-ms-gateway
+# FDNS Gateway Microservice
 This is the repository with the API gateway to connect the other microservices together.
 
-## ----- Start of respository specific READ ME -----
-### This repository specific READ ME instructions go here
+## Running locally
+Carefully read the following instructions for information on how to build, run, and test this microservice in your local environment.
 
-Replace everything within this section demarcated with “-----“ with material appropriate to your repo that is useful to your developers and users like installation steps, user guide etc.
-## ----- End of respository specific READ ME -----
+### Before you start
+You will need to have the following installed before getting up and running locally:
+
+- Docker, [Installation guides](https://docs.docker.com/install/)
+- Docker Compose, [Installation guides](https://docs.docker.com/compose/install/)
+- **Windows Users**: This project uses `Make`, please see [Cygwin](http://www.cygwin.com/) for running commands in this README
+
+### Build
+
+First, you'll need to build the image. You can build the image by running the following command:
+
+```
+make docker-build
+```
+
+### Run
+
+Once the image has been built, you can run it with the following command:
+
+```
+make docker-run
+```
+
+### Test
+
+To check if the microservice is running, just open the following URL in your browser:
+
+```
+http://127.0.0.1:8099/
+```
+
+### Docker Compose
+This microservice is designed to be used with other microservices. Please look at the [docker-compose](./docker-compose.yml) file for more information.
+
+### HTTPS Configuration
+To run the gateway with HTTPS you can configure the following environment variables:
+
+* `GATEWAY_SSL_PORT`: Which port you want the HTTPS to configure to (typically 443 or 8443).
+* `GATEWAY_SSL_CERT`: This is the value for your SSL certificate, ex: should begin with `-----BEGIN CERTIFICATE-----`
+* `GATEWAY_SSL_KEY`: This is the value for your SSL private key, ex: should begin with `-----BEGIN PRIVATE KEY-----`
+
+### Miscellaneous Configurations
+Here are other various configurations and their purposes:
+
+* `GATEWAY_PORT`: This is a configurable port the application is set to run on HTTP
   
 ## Public Domain
 This repository constitutes a work of the United States Government and is not
