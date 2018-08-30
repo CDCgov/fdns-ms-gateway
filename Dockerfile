@@ -8,6 +8,10 @@ RUN mvn clean package
 # run stage
 FROM openjdk:8-jre-alpine
 
+# need openssl for GATEWAY_SSL_PORT
+RUN apk add openssl
+RUN touch /keystore.p12
+
 ARG GATEWAY_PORT
 ARG GATEWAY_SSL_PORT
 ARG GATEWAY_SSL_CERT
@@ -23,8 +27,8 @@ COPY scripts/run.sh /home/run.sh
 RUN chmod +x /home/run.sh
 
 # don't run as root user
-RUN chown -R 1001:0 /home/run.sh /app.jar /tmp
-RUN chmod g+rwx /home/run.sh /app.jar /tmp
+RUN chown -R 1001:0 /home/run.sh /app.jar /tmp /keystore.p12
+RUN chmod g+rwx /home/run.sh /app.jar /tmp /keystore.p12
 USER 1001
 
 CMD ["/home/run.sh"]

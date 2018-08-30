@@ -8,7 +8,7 @@ services:
 
   # FDNS HL7 Utilities Microservice
   fdns-ms-hl7-utils:
-    image: fdns-ms-hl7-utils
+    image: cdcgov/fdns-ms-hl7-utils
     ports:
       - "8080:8080"
     depends_on:
@@ -19,10 +19,10 @@ services:
       OBJECT_URL: http://fdns-ms-object:8083
       HL7_UTILS_FLUENTD_HOST: fluentd
       HL7_UTILS_FLUENTD_PORT: 24224
-  
+
   # FDNS CDA Utilities Microservice
   fdns-ms-cda-utils:
-    image: fdns-ms-cda-utils
+    image: cdcgov/fdns-ms-cda-utils
     ports:
       - "8081:8081"
     depends_on:
@@ -30,11 +30,11 @@ services:
     environment:
       CDA_UTILS_PORT: 8081
       CDA_UTILS_FLUENTD_HOST: fluentd
-      CDA_UTILS_FLUENTD_PORT: 24224     
-  
+      CDA_UTILS_FLUENTD_PORT: 24224
+
   # FDNS Storage Microservice
   fdns-ms-storage:
-    image: fdns-ms-storage
+    image: cdcgov/fdns-ms-storage
     ports:
       - "8082:8082"
     depends_on:
@@ -58,7 +58,7 @@ services:
 
   # FDNS Object Microservice
   fdns-ms-object:
-    image: fdns-ms-object
+    image: cdcgov/fdns-ms-object
     ports:
       - "8083:8083"
     depends_on:
@@ -74,10 +74,10 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-  
+
   # FDNS Indexing Microservice
   fdns-ms-indexing:
-    image: fdns-ms-indexing
+    image: cdcgov/fdns-ms-indexing
     ports:
       - "8084:8084"
     depends_on:
@@ -109,10 +109,10 @@ services:
       nofile:
         soft: 65536
         hard: 65536
-  
+
   # FDNS Combiner Microservice
   fdns-ms-combiner:
-    image: fdns-ms-combiner
+    image: cdcgov/fdns-ms-combiner
     ports:
       - "8085:8085"
     depends_on:
@@ -126,7 +126,7 @@ services:
 
   # FDNS Business Rule Engine Microservice
   fdns-ms-rules:
-    image: fdns-ms-rules
+    image: cdcgov/fdns-ms-rules
     ports:
       - "8086:8086"
     depends_on:
