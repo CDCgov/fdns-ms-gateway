@@ -11,8 +11,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
-import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
@@ -42,8 +41,8 @@ public class GatewayApplication {
 
 	@Bean
 	@ConditionalOnProperty(name = "security.require-ssl", havingValue = "true")
-	public EmbeddedServletContainerFactory servletContainer() {
-		TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
+	public TomcatServletWebServerFactory servletContainer() {
+		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
 			@Override
 			protected void postProcessContext(Context context) {
 				SecurityConstraint securityConstraint = new SecurityConstraint();

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CDCgov/fdns-ms-gateway.svg?branch=master)](https://travis-ci.org/CDCgov/fdns-ms-gateway)
+
 # FDNS Gateway Microservice
 This is the repository with the API gateway to connect the other microservices together.
 

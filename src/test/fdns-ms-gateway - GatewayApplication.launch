@@ -11,6 +11,7 @@
 <mapEntry key="PORT" value="8099"/>
 </mapAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.springframework.ide.eclipse.boot.launch.BootMavenClassPathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="gov.cdc.foundation.GatewayApplication"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="fdns-ms-gateway"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.springframework.ide.eclipse.boot.launch.BootMavenSourcePathProvider"/>
@@ -19,6 +20,7 @@
 <booleanAttribute key="spring.boot.ansi.console" value="false"/>
 <booleanAttribute key="spring.boot.dash.hidden" value="false"/>
 <booleanAttribute key="spring.boot.debug.enable" value="false"/>
+<booleanAttribute key="spring.boot.fast.startup" value="true"/>
 <booleanAttribute key="spring.boot.jmx.enable" value="true"/>
 <booleanAttribute key="spring.boot.lifecycle.enable" value="true"/>
 <stringAttribute key="spring.boot.lifecycle.termination.timeout" value="15000"/>
