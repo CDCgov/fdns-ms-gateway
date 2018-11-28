@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  fdns-ms-gateway:
+    image: cdcgov/fdns-ms-gateway
+    ports:
+      - "8090:8090"
+    environment:
+      GATEWAY_PORT: 8090
+  # Gateway expects other FDNS containers to be running in order to get the full functionality
+  # Please see the docker-compose.yml for more info
